@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_array($result)) {
    $exito   = 'SI';
    $mensaje = 'Registro exitoso';
 }
-if (count($ilsta)>0) {
+if (count($lista)>0) {
    $exito   = 'SI';
    $mensaje = 'busqueda exitosa';
 } else {

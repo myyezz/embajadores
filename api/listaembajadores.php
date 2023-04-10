@@ -41,7 +41,7 @@ while ($row = mysqli_fetch_array($result)) {
 
    $fila = array(
       "id" => $row["id"],
-      "nombre" => mysqli_real_escape_string($link,$row["nombre"]),
+      "nombre" => $row["nombre"],
       "celular" => $row["celular"],
       "email" => $row["email"],
       "tallafranela" => $row["tallafranela"],
