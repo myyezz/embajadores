@@ -1,4 +1,4 @@
-const URL = 'https://myyezz.github.io/embajadores/api/resetpassword.php';
+const URL = 'https://embajadores.cash-flag.com/api/resetpassword.php';
 
 const limpiar = () => {
    document.getElementById("password").value = "";

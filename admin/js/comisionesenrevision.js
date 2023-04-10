@@ -1,5 +1,5 @@
-const URL = 'https://myyezz.github.io/embajadores/api/comisionesenrevision.php';
-const URL2 = 'https://myyezz.github.io/embajadores/api/revisioncomisiones.php';
+const URL = 'https://embajadores.cash-flag.com/api/comisionesenrevision.php';
+const URL2 = 'https://embajadores.cash-flag.com/api/revisioncomisiones.php';
 
 let registros, id, imei; 
 

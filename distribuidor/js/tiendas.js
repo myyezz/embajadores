@@ -1,6 +1,6 @@
-const URL = 'https://myyezz.github.io/embajadores/api/tiendas.php';
-const LISTA = 'https://myyezz.github.io/embajadores/api/listatiendas.php';
-const GRUPOS = 'https://myyezz.github.io/embajadores/api/listagrupos.php';
+const URL = 'https://embajadores.cash-flag.com/api/tiendas.php';
+const LISTA = 'https://embajadores.cash-flag.com/api/listatiendas.php';
+const GRUPOS = 'https://embajadores.cash-flag.com/api/listagrupos.php';
 
 const limpiar = () => {
    document.getElementById("nombre").value = "";

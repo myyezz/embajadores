@@ -38,14 +38,14 @@ if (isset($ambiente)) {
       */
 
       case 'pruebas':
-         $servidor = "170.39.196.230:3306";
+         $servidor = "localhost:3306";
          $cuenta   = "sgcconsu_embajadores";
          $password = "embajadores12345**";
          $database = "sgcconsu_embajadores";
          $urlapp   = "https://popclik.cash-flag.com";
       break;
       case 'produccion':
-         $servidor = "170.39.196.230:3306";
+         $servidor = "localhost:3306";
          $cuenta   = "sgcconsu_embajadores";
          $password = "embajadores12345**";
          $database = "sgcconsu_embajadores";

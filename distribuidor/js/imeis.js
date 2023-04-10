@@ -1,4 +1,4 @@
-const URL = 'https://myyezz.github.io/embajadores/api/cargafile.php';
+const URL = 'https://embajadores.cash-flag.com/api/cargafile.php';
 
 let archivos = [], archivo;
 

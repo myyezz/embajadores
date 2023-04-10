@@ -1,5 +1,5 @@
-const LISTA = 'https://myyezz.github.io/embajadores/api/listamodelosemb.php';
-const EQUIVALENCIA = 'https://myyezz.github.io/embajadores/api/equivalencia.php';
+const LISTA = 'https://embajadores.cash-flag.com/api/listamodelosemb.php';
+const EQUIVALENCIA = 'https://embajadores.cash-flag.com/api/equivalencia.php';
 
 const inicio = () => {
    console.log(localStorage);

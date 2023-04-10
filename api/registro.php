@@ -71,7 +71,7 @@ function correonuevacuenta($emailx, $nombre, $celular, $nombretienda, $direccion
    $asunto = "Nuevo Embajador registrado.";
 
    $sTexto  = '<div style="width: 388.65px;">
-                  <img src="https://myyezz.github.io/embajadores/images/LOGO.png" width="220" height="50.23" />
+                  <img src="https://embajadores.cash-flag.com/images/LOGO.png" width="220" height="50.23" />
                </div>';
 
    $sTexto .= "<br/>Buen día<br/><br/>";
@@ -90,7 +90,7 @@ function correonuevacuenta($emailx, $nombre, $celular, $nombretienda, $direccion
 
    $sTexto .= "Talla de Franela: ".$tallafranela."<br/><br/>";
 
-   $sTexto .= 'Ingresa en <a href="https://myyezz.github.io/embajadores/admin">este enlace</a> para mirar sus datos y aprobar su solicitud<br/><br/>';
+   $sTexto .= 'Ingresa en <a href="https://embajadores.cash-flag.com/admin">este enlace</a> para mirar sus datos y aprobar su solicitud<br/><br/>';
 
    $a = fopen('log.html','w+');
    fwrite($a,$asunto);

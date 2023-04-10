@@ -1,5 +1,5 @@
-const URL = 'https://myyezz.github.io/embajadores/api/grupos.php';
-const LISTA = 'https://myyezz.github.io/embajadores/api/listagrupos.php';
+const URL = 'https://embajadores.cash-flag.com/api/grupos.php';
+const LISTA = 'https://embajadores.cash-flag.com/api/listagrupos.php';
 
 const limpiar = () => {
    document.getElementById("nombre").value = "";

@@ -108,7 +108,7 @@ function correonotificacion($email, $nombre, $accion) {
       $asunto = "Bienvenido a embajadores YEZZ. Registro Aprobado.";
 
       $sTexto  = '<div style="width: 388.65px;">
-                     <img src="https://myyezz.github.io/embajadores/images/LOGO.png" width="220" height="50.23" />
+                     <img src="https://embajadores.cash-flag.com/images/LOGO.png" width="220" height="50.23" />
                   </div>';
    
       $sTexto .= '<br/>Estimado '.$nombre.'<br/><br/>';
@@ -117,7 +117,7 @@ function correonotificacion($email, $nombre, $accion) {
    
       $sTexto .= 'Ya puedes comenzar a registrar tus IMEIS vendidos dentro de la plataforma.'.'<br/><br/>';
    
-      $sTexto .= 'Inicia sesión en tu cuenta <a href="https://myyezz.github.io/embajadores">AQUÍ</a>'.'<br/><br/>';
+      $sTexto .= 'Inicia sesión en tu cuenta <a href="https://embajadores.cash-flag.com">AQUÍ</a>'.'<br/><br/>';
    
       $sTexto .= 'Si tienes algún problema con tu cuenta, comunícate con nosotros a <a href="mailto:embajador@myyezz.com">embajador@myyezz.com</a>'.'<br/><br/>';
    
@@ -128,7 +128,7 @@ function correonotificacion($email, $nombre, $accion) {
       $asunto = "Registro de embajadores YEZZ Rechazado.";
 
       $sTexto  = '<div style="width: 388.65px;">
-                     <img src="https://myyezz.github.io/embajadores/images/LOGO.png" width="220" height="50.23" />
+                     <img src="https://embajadores.cash-flag.com/images/LOGO.png" width="220" height="50.23" />
                   </div>';
    
       $sTexto .= '<br/>Estimado '.$nombre.'<br/><br/>';
@@ -155,7 +155,7 @@ function correobienvenida($email, $nombre) {
    $asunto = "Bienvenido a embajadores YEZZ. Registro Aprobado.";
 
    $sTexto  = '<div style="width: 388.65px;">
-                  <img src="https://myyezz.github.io/embajadores/images/LOGO.png" width="220" height="50.23" />
+                  <img src="https://embajadores.cash-flag.com/images/LOGO.png" width="220" height="50.23" />
                </div>';
 
    $sTexto .= '<br/>Estimado '.$nombre.'<br/><br/>';
@@ -164,7 +164,7 @@ function correobienvenida($email, $nombre) {
 
    $sTexto .= 'Ya puedes comenzar a registrar tus IMEIS vendidos dentro de la plataforma.'.'<br/><br/>';
 
-   $sTexto .= 'Inicia sesión en tu cuenta <a href="https://myyezz.github.io/embajadores">AQUÍ</a>'.'<br/><br/>';
+   $sTexto .= 'Inicia sesión en tu cuenta <a href="https://embajadores.cash-flag.com">AQUÍ</a>'.'<br/><br/>';
 
    $sTexto .= 'Si tienes algún problema con tu cuenta, comunícate con nosotros a <a href="mailto:embajador@myyezz.com">embajador@myyezz.com</a>'.'<br/><br/>';
 
@@ -184,7 +184,7 @@ function correorechazo($email, $nombre) {
    $asunto = "Registro de embajadores YEZZ Rechazado.";
 
    $sTexto  = '<div style="width: 388.65px;">
-                  <img src="https://myyezz.github.io/embajadores/images/LOGO.png" width="220" height="50.23" />
+                  <img src="https://embajadores.cash-flag.com/images/LOGO.png" width="220" height="50.23" />
                </div>';
 
    $sTexto .= '<br/>Estimado '.$nombre.'<br/><br/>';
