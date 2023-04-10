@@ -11,6 +11,7 @@ const loginadm = () => {
 
       data.append("password", document.getElementById("password").value);
 
+      console.log(URL);
       fetch(URL, {
          method: 'POST',
          body: data
