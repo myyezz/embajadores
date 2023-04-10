@@ -1,4 +1,4 @@
-const URL = 'http://embajadores.myyezz.com/api/comisionestotalesporfecha.php';
+const URL = 'https://myyezz.github.io/embajadores/api/comisionestotalesporfecha.php';
 
 let registros, registrosx, distribuidores, grupos, tiendas; 
 

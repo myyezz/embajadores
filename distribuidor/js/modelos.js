@@ -1,5 +1,5 @@
-const URL = 'http://embajadores.myyezz.com/api/modelos.php';
-const LISTA = 'http://embajadores.myyezz.com/api/listamodelos.php';
+const URL = 'https://myyezz.github.io/embajadores/api/modelos.php';
+const LISTA = 'https://myyezz.github.io/embajadores/api/listamodelos.php';
 
 const limpiar = () => {
    document.getElementById("nombre").value = "";

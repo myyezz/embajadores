@@ -1,6 +1,6 @@
-const URL = 'http://embajadores.myyezz.com/api/candidatos.php';
-const LISTA = 'http://embajadores.myyezz.com/api/listacandidatos.php';
-const TIENDAS = 'http://embajadores.myyezz.com/api/listatiendas.php?grupo=1';
+const URL = 'https://myyezz.github.io/embajadores/api/candidatos.php';
+const LISTA = 'https://myyezz.github.io/embajadores/api/listacandidatos.php';
+const TIENDAS = 'https://myyezz.github.io/embajadores/api/listatiendas.php?grupo=1';
 
 let xtiendas, registros;
 

@@ -1,4 +1,4 @@
-const GRUPOS = 'http://embajadores.myyezz.com/api/listagrupos.php';
+const GRUPOS = 'https://myyezz.github.io/embajadores/api/listagrupos.php';
 
 let registros; 
 

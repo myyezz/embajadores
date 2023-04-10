@@ -1,4 +1,4 @@
-const URL = 'http://embajadores.myyezz.com/api/password.php';
+const URL = 'https://myyezz.github.io/embajadores/api/password.php';
 
 const limpiar = () => {
    document.getElementById("password").value = "";

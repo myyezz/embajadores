@@ -1,4 +1,4 @@
-const CONSULTAIMEI = 'http://embajadores.myyezz.com/api/consultaimei.php';
+const CONSULTAIMEI = 'https://myyezz.github.io/embajadores/api/consultaimei.php';
 
 
 const limpiar = () => {

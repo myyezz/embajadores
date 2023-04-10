@@ -1,5 +1,5 @@
-const URL = 'http://embajadores.myyezz.com/api/comisionesporgrupo.php';
-const GRUPOS = 'http://embajadores.myyezz.com/api/listagrupos.php';
+const URL = 'https://myyezz.github.io/embajadores/api/comisionesporgrupo.php';
+const GRUPOS = 'https://myyezz.github.io/embajadores/api/listagrupos.php';
 
 let registros; 
 

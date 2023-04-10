@@ -1,5 +1,5 @@
-const URL = 'http://embajadores.myyezz.com/api/login.php';
-const USER = 'http://embajadores.myyezz.com/api/user.php';
+const URL = 'https://myyezz.github.io/embajadores/api/login.php';
+const USER = 'https://myyezz.github.io/embajadores/api/user.php';
 
 const registro = () => {
    window.open("./registro.html","_self");

@@ -1,4 +1,4 @@
-const URL = 'http://embajadores.myyezz.com/api/resetpassword.php';
+const URL = 'https://myyezz.github.io/embajadores/api/resetpassword.php';
 
 const limpiar = () => {
    document.getElementById("password").value = "";

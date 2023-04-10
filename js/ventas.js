@@ -1,6 +1,6 @@
-const IMEIS = 'http://embajadores.myyezz.com/api/imeis.php';
-const URL = 'http://embajadores.myyezz.com/api/venta.php';
-const EQUIVALENCIA = 'http://embajadores.myyezz.com/api/equivalencia.php';
+const IMEIS = 'https://myyezz.github.io/embajadores/api/imeis.php';
+const URL = 'https://myyezz.github.io/embajadores/api/venta.php';
+const EQUIVALENCIA = 'https://myyezz.github.io/embajadores/api/equivalencia.php';
 let token, id, email, nombre, idtienda, nombretienda, acum_unidades, acum_monto, acum_unidades_revision, acum_monto_revision;
 
 const inicio = () => {

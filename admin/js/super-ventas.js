@@ -1,10 +1,10 @@
-const LISTA = 'http://embajadores.myyezz.com/api/listaembajadores.php';
-const TIENDAS = 'http://embajadores.myyezz.com/api/listatiendas.php?grupo=1';
-const GRUPOS = 'http://embajadores.myyezz.com/api/listagrupos.php';
-const DISTRIB = 'http://embajadores.myyezz.com/api/listadistribuidores.php';
+const LISTA = 'https://myyezz.github.io/embajadores/api/listaembajadores.php';
+const TIENDAS = 'https://myyezz.github.io/embajadores/api/listatiendas.php?grupo=1';
+const GRUPOS = 'https://myyezz.github.io/embajadores/api/listagrupos.php';
+const DISTRIB = 'https://myyezz.github.io/embajadores/api/listadistribuidores.php';
 
-const REGISTRO = 'http://embajadores.myyezz.com/api/buscaregistro.php?imei=';
-const URL = 'http://embajadores.myyezz.com/api/superventa.php';
+const REGISTRO = 'https://myyezz.github.io/embajadores/api/buscaregistro.php?imei=';
+const URL = 'https://myyezz.github.io/embajadores/api/superventa.php';
 
 let xdatos, datos, xfecha;
 

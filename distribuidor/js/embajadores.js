@@ -1,6 +1,6 @@
-const URL = 'http://embajadores.myyezz.com/api/embajadores.php';
-const LISTA = 'http://embajadores.myyezz.com/api/listaembajadores.php';
-const TIENDAS = 'http://embajadores.myyezz.com/api/listatiendas.php?grupo=1';
+const URL = 'https://myyezz.github.io/embajadores/api/embajadores.php';
+const LISTA = 'https://myyezz.github.io/embajadores/api/listaembajadores.php';
+const TIENDAS = 'https://myyezz.github.io/embajadores/api/listatiendas.php?grupo=1';
 
 const limpiar = () => {
    document.getElementById("nombre").value = "";

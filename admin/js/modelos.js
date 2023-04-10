@@ -1,6 +1,6 @@
-const URL = 'http://embajadores.myyezz.com/api/modelos.php';
-const LISTA = 'http://embajadores.myyezz.com/api/listamodelos.php';
-const EQUIVALENCIA = 'http://embajadores.myyezz.com/api/equivalencia.php';
+const URL = 'https://myyezz.github.io/embajadores/api/modelos.php';
+const LISTA = 'https://myyezz.github.io/embajadores/api/listamodelos.php';
+const EQUIVALENCIA = 'https://myyezz.github.io/embajadores/api/equivalencia.php';
 
 const limpiar = () => {
    document.getElementById("indice").value = "New";
