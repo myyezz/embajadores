@@ -3,6 +3,7 @@ const URL = 'https://embajadores.cash-flag.com/api/cargafile.php';
 let archivos = [], archivo;
 
 function handleFile(e) {
+   document.getElementById("span-form-submit").innerHTML = " Procesando...";
    letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
    // Check for the various File API support.
    if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -84,6 +85,8 @@ function handleFile(e) {
          .then((responseData) => {
             if (responseData.exito=="SI") {
                alert(responseData.mensaje);
+               console.log(responseData);
+               llenartabla(file.name, responseData);
                document.getElementById("archivo").value = "";
             } else {
                alert(responseData.mensaje);
@@ -98,3 +101,89 @@ const cargaimeis = () => {
    handleFile()
 }
 document.getElementById('form-submit').addEventListener('click', handleFile, false);
+
+const llenartabla = (file, registros) => {
+   if (registros.correctos.length>0) {
+      txt = "";
+      coma = '';
+      first = true;
+      registros.correctos.forEach((elemento) => {
+         if (first) {
+            first = false;
+         } else {
+            coma = ', ';
+         }
+         txt += coma+elemento;
+      });
+      txt0 = document.createTextNode(file+' - Registros correctos: ');
+      txt1 = document.createTextNode(txt);
+      cl1 = document.createElement("td");
+      sp1 = document.createElement("span");
+      sp2 = document.createElement("span");
+      sp1.appendChild(txt0);
+      sp2.appendChild(txt1);
+      cl1.appendChild(sp1);
+      cl1.appendChild(sp2);
+
+      fila = document.createElement("tr");
+      fila.appendChild(cl1);
+      document.getElementById("tabla").appendChild(fila);
+   }
+
+   if (registros.duplicados.length>0) {
+      txt = "";
+      coma = '';
+      first = true;
+      registros.duplicados.forEach((elemento) => {
+         if (first) {
+            first = false;
+         } else {
+            coma = ', ';
+         }
+         txt += coma+elemento;
+      });
+      txt0 = document.createTextNode(file+' - Registros duplicados: ');
+      txt1 = document.createTextNode(txt);
+      cl1 = document.createElement("td");
+      cl1.style.display = 'flex';
+      cl1.style.flexDirection = 'column';
+      sp1 = document.createElement("span");
+      sp2 = document.createElement("span");
+      sp1.appendChild(txt0);
+      sp2.appendChild(txt1);
+      cl1.appendChild(sp1);
+      cl1.appendChild(sp2);
+
+      fila = document.createElement("tr");
+      fila.appendChild(cl1);
+      document.getElementById("tabla").appendChild(fila);
+   }
+
+   if (registros.invalidos.length>0) {
+      txt = "";
+      coma = '';
+      first = true;
+      registros.invalidos.forEach((elemento) => {
+         if (first) {
+            first = false;
+         } else {
+            coma = ', ';
+         }
+         txt += coma+elemento;
+      });
+      txt0 = document.createTextNode(file+' - Registros inválidos: ');
+      txt1 = document.createTextNode(txt);
+      cl1 = document.createElement("td");
+      sp1 = document.createElement("span");
+      sp2 = document.createElement("span");
+      sp1.appendChild(txt0);
+      sp2.appendChild(txt1);
+      cl1.appendChild(sp1);
+      cl1.appendChild(sp2);
+
+      fila = document.createElement("tr");
+      fila.appendChild(cl1);
+      document.getElementById("tabla").appendChild(fila);
+   }
+   document.getElementById("span-form-submit").innerHTML = " Enviar";
+}

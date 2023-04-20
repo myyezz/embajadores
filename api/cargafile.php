@@ -19,29 +19,31 @@ foreach ($registros as $registro) {
    $idgrupo        = $registro["idgrupo"];
    $iddistribuidor = $registro["iddistribuidor"];
 
-   $query = "insert into imei (imei, idmodelo, idtienda, idgrupo, iddistribuidor, vendido, fechadecarga) values ";
-
-   $first = true;
-   $coma = "";
+   $correctos = array();
+   $duplicados = array();
+   $invalidos = array();
    for ($i=0; $i < count($imeis); $i++) {
-      if ($first) {
-         $first = false;
-      } else {
-         $coma = ",";
-      }
       $imei = $imeis[$i];
-      $query .= $coma."('$imei', '$idmodelo', $idtienda, $idgrupo, $iddistribuidor, 'NO', '$hoy')";
-   }
-   // echo $query;
-   if ($result = mysqli_query($link, $query)) {
-      $respuesta  = '{"exito":"SI"';
-      $respuesta .= ',"mensaje":"Éxito"';
-   } else {
-      $respuesta  = '{"exito":"NO"';
-      $respuesta .= ',"mensaje":"Ocurrió un error en la carga"';
+      $query = "select * from imei where imei='$imei'";
+      if ($result = mysqli_query($link, $query)) {
+         if ($row = mysqli_fetch_array($result)) {
+            $duplicados[] = $imei;
+         } else {
+            $correctos[] = $imei;
+            $quer2 = "insert into imei (imei, idmodelo, idtienda, idgrupo, iddistribuidor, vendido, fechadecarga) values ";
+            $quer2 .= "('$imei', '$idmodelo', $idtienda, $idgrupo, $iddistribuidor, 'NO', '$hoy')";
+            $resul2 = mysqli_query($link, $quer2);
+         }
+      } else {
+         $invalidos[] = $imei;
+      }
    }
 }
-$respuesta .= ',"registros": []';
+$respuesta  = '{"exito":"SI"';
+$respuesta .= ',"mensaje":"Éxito"';
+$respuesta .= ',"correctos": ['. implode(',', $correctos)    .']';
+$respuesta .= ',"duplicados": ['. implode(',', $duplicados)   .']';
+$respuesta .= ',"invalidos": ['. implode(',', $invalidos)    .']';
 $respuesta .= '}';
 
 echo $respuesta;
