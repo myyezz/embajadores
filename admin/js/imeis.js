@@ -31,67 +31,87 @@ function handleFile(e) {
          tabla  = '{"registros":';
          tabla += '[';
 
-         first = true;
+         errores = 0;
          for (i = fi+1; i <= ff; i++) { // 24 filas desde la 2 hasta la 20
             x = i+1;
             // ID del cliente
             celda = "A"+x;
-            idgrupo = (worksheet[celda].v!=undefined) ? worksheet[celda].v : 0 ;
+            errores += (worksheet[celda]!=undefined) ? 0 : 1;
             // UPC - Modelo
             celda = "C"+x;
-            idmodelo = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
+            errores += (worksheet[celda]!=undefined) ? 0 : 1;
             // imeis
             celda = "E"+x;
-            xValor = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
-            aValor = xValor.split(",");
-            if (idgrupo!=0 && idmodelo!="" && xValor!="") {
-               if (first) {
-                  first = false;
-                  coma = "";
-               } else {
-                  coma = ",";
-               }
-               tabla += coma+'{';
-               // ID del distribuidor
-               tabla += '"iddistribuidor":' +  '0';
-               // ID del cliente
-               tabla += ',"idgrupo":' +  idgrupo;
-               // ID de la tienda
-               tabla += ',"idtienda":' +  '0';
-               // UPC - Modelo
-               tabla += ',"idmodelo":"' +  idmodelo + '"';
-               // imeis
-               tabla += ',"imeis":[';
-               com2 = '';
-               firs2 = true;
-               aValor.forEach(element => {
-                  if (firs2) { firs2 = false; } else { com2 = ','; }
-                  tabla += com2+'"'+element.trim()+'"';
-               });
-               tabla += ']';
-               tabla += '}';
-            }
+            errores += (worksheet[celda]!=undefined) ? 0 : 1;
          }
-         tabla += ']}';
-
-         datos = new FormData();
-         datos.append("registros", tabla);
-
-         fetch(URL, {
-            method: 'POST',
-            body: datos
-         })
-         .then((response) => response.json())
-         .then((responseData) => {
-            if (responseData.exito=="SI") {
-               alert(responseData.mensaje);
-               console.log(responseData);
-               llenartabla(file.name, responseData);
-               document.getElementById("archivo").value = "";
-            } else {
-               alert(responseData.mensaje);
+         if (errores>0) {
+            alert('Hay errores en la estructura del archivo, por favor revisar e intentar de nuevo.');
+            tabla += ']}';
+            document.getElementById("archivo").value = "";
+            document.getElementById("span-form-submit").innerHTML = " Enviar";
+         } else {
+            first = true;
+            for (i = fi+1; i <= ff; i++) { // 24 filas desde la 2 hasta la 20
+               x = i+1;
+               // ID del cliente
+               celda = "A"+x;
+               idgrupo = (worksheet[celda].v!=undefined) ? worksheet[celda].v : 0 ;
+               // UPC - Modelo
+               celda = "C"+x;
+               idmodelo = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
+               // imeis
+               celda = "E"+x;
+               xValor = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
+               aValor = xValor.split(",");
+               if (idgrupo!=0 && idmodelo!="" && xValor!="") {
+                  if (first) {
+                     first = false;
+                     coma = "";
+                  } else {
+                     coma = ",";
+                  }
+                  tabla += coma+'{';
+                  // ID del distribuidor
+                  tabla += '"iddistribuidor":' +  '0';
+                  // ID del cliente
+                  tabla += ',"idgrupo":' +  idgrupo;
+                  // ID de la tienda
+                  tabla += ',"idtienda":' +  '0';
+                  // UPC - Modelo
+                  tabla += ',"idmodelo":"' +  idmodelo + '"';
+                  // imeis
+                  tabla += ',"imeis":[';
+                  com2 = '';
+                  firs2 = true;
+                  aValor.forEach(element => {
+                     if (firs2) { firs2 = false; } else { com2 = ','; }
+                     tabla += com2+'"'+element.trim()+'"';
+                  });
+                  tabla += ']';
+                  tabla += '}';
+               }
             }
-         });
+            tabla += ']}';
+   
+            datos = new FormData();
+            datos.append("registros", tabla);
+   
+            fetch(URL, {
+               method: 'POST',
+               body: datos
+            })
+            .then((response) => response.json())
+            .then((responseData) => {
+               if (responseData.exito=="SI") {
+                  alert(responseData.mensaje);
+                  console.log(responseData);
+                  llenartabla(file.name, responseData);
+                  document.getElementById("archivo").value = "";
+               } else {
+                  alert(responseData.mensaje);
+               }
+            });
+         }
       };
       reader.readAsArrayBuffer(f);
    }
