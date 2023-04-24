@@ -9,7 +9,6 @@ require './lib/Exception.php';
 require './lib/SMTP.php';
 
 function enviaemail($para, $nombre, $asunto, $cuerpo) {
-
     $nombre = utf8_decode($nombre);
     $asunto = utf8_decode($asunto);
     $cuerpo = utf8_decode($cuerpo);
@@ -20,14 +19,25 @@ function enviaemail($para, $nombre, $asunto, $cuerpo) {
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;              // Enable verbose debug output
     // $mail->SMTPDebug = 2;              // Enable verbose debug output
     $mail->isSMTP();                                    // Send using SMTP
-    $mail->Host       = 'smtp.office365.com';           // Set the SMTP server to send through
+
+    $mail->CharSet    = 'utf-8';           // Set the SMTP server to send through
+    $mail->Host       = 'cash-flag.com';           // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                           // Enable SMTP authentication
     $mail->SMTPKeepAlive = true;                        // SMTP connection will not close after each email sent
-    $mail->Username   = 'embajador@myyezz.com';             // SMTP username
-    $mail->Password   = 'Xud52447';                     // SMTP password
+    $mail->Username   = 'embajadoresyezz@cash-flag.com';             // SMTP username
+    $mail->Password   = 'embajadores12345**';                     // SMTP password
     // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption;
-    $mail->SMTPSecure = 'tls'; // Enable TLS encryption;
-    $mail->Port       = 587;                            // TCP port to connect to, use 465 for 
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption;
+    $mail->Port       = 465;                            // TCP port to connect to, use 465 for 
+
+    // $mail->Host       = 'smtp.office365.com';           // Set the SMTP server to send through
+    // $mail->SMTPAuth   = true;                           // Enable SMTP authentication
+    // $mail->SMTPKeepAlive = true;                        // SMTP connection will not close after each email sent
+    // $mail->Username   = 'embajador@myyezz.com';             // SMTP username
+    // $mail->Password   = 'Xud52447';                     // SMTP password
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption;
+    // $mail->SMTPSecure = 'tls'; // Enable TLS encryption;
+    // $mail->Port       = 587;                            // TCP port to connect to, use 465 for 
 
     //Recipients
     $mail->setFrom('embajador@myyezz.com', utf8_decode('Embajadores Yezz'));
