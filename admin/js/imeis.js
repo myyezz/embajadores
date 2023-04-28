@@ -61,7 +61,7 @@ function handleFile(e) {
                idmodelo = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
                // imeis
                celda = "E"+x;
-               xValor = (worksheet[celda].v!=undefined) ? worksheet[celda].v.trim() : "" ;
+               xValor = (worksheet[celda].v!=undefined) ? String(worksheet[celda].v).trim() : "" ;
                aValor = xValor.split(",");
                if (idgrupo!=0 && idmodelo!="" && xValor!="") {
                   if (first) {
