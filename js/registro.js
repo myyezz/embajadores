@@ -57,6 +57,8 @@ const registro = () => {
                if (responseData.exito==="SI") {
                   alert('Solicitud de registro enviada. Recibirás un correo electrónico cuando se apruebe tu registro.')
                   limpiar();
+               } else {
+                  alert(responseData.mensaje);
                }
                document.getElementById("form-submit").disabled = false;
             });
