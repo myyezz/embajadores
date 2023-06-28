@@ -53,6 +53,7 @@ const registro = () => {
             })
             .then((response) => response.json())
             .then((responseData) => {
+               console.log(responseData);
                if (responseData.exito==="SI") {
                   alert('Solicitud de registro enviada. Recibirás un correo electrónico cuando se apruebe tu registro.')
                   limpiar();
