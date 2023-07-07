@@ -169,10 +169,11 @@ const registro = () => {
       })
       .then((response) => response.json())
       .then((responseData) => {
-         console.log(responseData);
          if (responseData.exito==="SI") {
             limpiar();
             busqueda();
+         } else {
+            alert(responseData.mensaje)
          }
          document.getElementById("form-submit").disabled = false;
       });
