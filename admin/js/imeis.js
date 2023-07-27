@@ -100,7 +100,7 @@ function handleFile(e) {
                method: 'POST',
                body: datos
             })
-            .then((response) => {console.log(reponse); response.json();})
+            .then((response) => {console.log(response); response.json();})
             .then((responseData) => {
                if (responseData.exito=="SI") {
                   alert(responseData.mensaje);
