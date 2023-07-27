@@ -27,15 +27,15 @@ foreach ($registros as $registro) {
       $query = "select * from imei where imei='$imei'";
       if ($result = mysqli_query($link, $query)) {
          if ($row = mysqli_fetch_array($result)) {
-            $duplicados[] = $imei;
+            $duplicados[] = '"'.$imei.'"';
          } else {
-            $correctos[] = $imei;
+            $correctos[] = '"'.$imei.'"';
             $quer2 = "insert into imei (imei, idmodelo, idtienda, idgrupo, iddistribuidor, vendido, fechadecarga) values ";
             $quer2 .= "('$imei', '$idmodelo', $idtienda, $idgrupo, $iddistribuidor, 'NO', '$hoy')";
             $resul2 = mysqli_query($link, $quer2);
          }
       } else {
-         $invalidos[] = $imei;
+         $invalidos[] = '"'.$imei.'"';
       }
    }
 }
