@@ -4,32 +4,34 @@ const EQUIVALENCIA = 'https://embajadores.cash-flag.com/api/equivalencia.php';
 let token, id, email, nombre, idtienda, nombretienda, acum_unidades, acum_monto, acum_unidades_revision, acum_monto_revision;
 
 const inicio = () => {
-   if (localStorage.getItem('token')!=undefined) {
-      token                  = localStorage.getItem('token');
-      id                     = (localStorage.getItem('id')!=undefined) ? localStorage.getItem('id') : 0 ;
-      email                  = (localStorage.getItem('email')!=undefined) ? localStorage.getItem('email') : "" ;
-      nombre                 = (localStorage.getItem('nombre')!=undefined) ? localStorage.getItem('nombre') : "" ;
-      idtienda               = (localStorage.getItem('idtienda')!=undefined) ? localStorage.getItem('idtienda') : 0 ;
-      nombretienda           = (localStorage.getItem('nombretienda')!=undefined) ? localStorage.getItem('nombretienda') : "" ;
-      acum_unidades          = (localStorage.getItem('acum_unidades')!=undefined) ? parseInt(localStorage.getItem('acum_unidades')) : 0 ;
-      acum_monto             = (localStorage.getItem('acum_monto')!=undefined) ? parseFloat(localStorage.getItem('acum_monto')) : 0.00 ;
-      acum_unidades_revision = (localStorage.getItem('acum_unidades_revision')!=undefined) ? parseInt(localStorage.getItem('acum_unidades_revision')) : 0 ;
-      acum_monto_revision    = (localStorage.getItem('acum_monto_revision')!=undefined) ? parseFloat(localStorage.getItem('acum_monto_revision')) : 0.00 ;
-      document.getElementById("nombre_embajador").innerHTML = nombre;
-      document.getElementById("acum_unidades").value          = acum_unidades;
-      document.getElementById("acum_monto").value             = acum_monto;
-      document.getElementById("acum_unidades_revision").value = acum_unidades_revision;
-      document.getElementById("acum_monto_revision").value    = acum_monto_revision;
-   }
+   window.open('./index.html', '_self');
 
-   fetch(EQUIVALENCIA)
-   .then((response) => response.json())
-   .then((responseData) => {
-      if (responseData.exito==="SI") {
-         document.getElementById('mensaje').innerHTML = '(*) Equivalencia: ' + responseData.registros[0].puntospordolar + ' puntos por dolar.';
-      } else {
-      }
-   });   
+   // if (localStorage.getItem('token')!=undefined) {
+   //    token                  = localStorage.getItem('token');
+   //    id                     = (localStorage.getItem('id')!=undefined) ? localStorage.getItem('id') : 0 ;
+   //    email                  = (localStorage.getItem('email')!=undefined) ? localStorage.getItem('email') : "" ;
+   //    nombre                 = (localStorage.getItem('nombre')!=undefined) ? localStorage.getItem('nombre') : "" ;
+   //    idtienda               = (localStorage.getItem('idtienda')!=undefined) ? localStorage.getItem('idtienda') : 0 ;
+   //    nombretienda           = (localStorage.getItem('nombretienda')!=undefined) ? localStorage.getItem('nombretienda') : "" ;
+   //    acum_unidades          = (localStorage.getItem('acum_unidades')!=undefined) ? parseInt(localStorage.getItem('acum_unidades')) : 0 ;
+   //    acum_monto             = (localStorage.getItem('acum_monto')!=undefined) ? parseFloat(localStorage.getItem('acum_monto')) : 0.00 ;
+   //    acum_unidades_revision = (localStorage.getItem('acum_unidades_revision')!=undefined) ? parseInt(localStorage.getItem('acum_unidades_revision')) : 0 ;
+   //    acum_monto_revision    = (localStorage.getItem('acum_monto_revision')!=undefined) ? parseFloat(localStorage.getItem('acum_monto_revision')) : 0.00 ;
+   //    document.getElementById("nombre_embajador").innerHTML = nombre;
+   //    document.getElementById("acum_unidades").value          = acum_unidades;
+   //    document.getElementById("acum_monto").value             = acum_monto;
+   //    document.getElementById("acum_unidades_revision").value = acum_unidades_revision;
+   //    document.getElementById("acum_monto_revision").value    = acum_monto_revision;
+   // }
+
+   // fetch(EQUIVALENCIA)
+   // .then((response) => response.json())
+   // .then((responseData) => {
+   //    if (responseData.exito==="SI") {
+   //       document.getElementById('mensaje').innerHTML = '(*) Equivalencia: ' + responseData.registros[0].puntospordolar + ' puntos por dolar.';
+   //    } else {
+   //    }
+   // });   
 }
 
 const limpiar = () => {
